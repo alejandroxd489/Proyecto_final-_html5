@@ -5,14 +5,18 @@
     font-family:Arial, sans-serif;
 }
 
+/* FONDO TIPO MAR */
 body{
-    background: linear-gradient(to right, #4facfe, #00f2fe);
+    background: linear-gradient(to bottom, #00c6ff, #0072ff, #f5d6a0);
     text-align:center;
     color:white;
 }
 
+/* TITULO */
 h1{
-    padding:20px;
+    padding:25px;
+    font-size:28px;
+    letter-spacing:2px;
 }
 
 /* CONTENEDOR */
@@ -20,35 +24,45 @@ h1{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    gap:15px;
+    gap:20px;
     padding:20px;
 }
 
-/* TARJETAS */
+/* TARJETAS CON IMAGEN */
 .card{
-    width:150px;
-    border-radius:15px;
-    overflow:hidden;
+    width:180px;
+    height:180px;
+    border-radius:20px;
+    background-size:cover;
+    background-position:center;
+    position:relative;
     cursor:pointer;
-    background:white;
-    color:black;
-    box-shadow:0 5px 10px rgba(0,0,0,0.3);
+    overflow:hidden;
     transition:0.3s;
 }
 
+/* EFECTO HOVER */
 .card:hover{
-    transform:scale(1.05);
+    transform:scale(1.08);
 }
 
-.card img{
+/* CAPA OSCURA */
+.card::before{
+    content:"";
+    position:absolute;
     width:100%;
-    height:100px;
-    object-fit:cover;
+    height:100%;
+    background:rgba(0,0,0,0.4);
 }
 
-.card p{
-    padding:10px;
+/* TEXTO ENCIMA */
+.overlay{
+    position:absolute;
+    bottom:10px;
+    width:100%;
+    text-align:center;
     font-weight:bold;
+    font-size:16px;
 }
 
 /* MODAL */
@@ -75,7 +89,14 @@ h1{
     overflow:auto;
 }
 
-/* BOTON CERRAR */
+/* IMÁGENES EN MODAL */
+.contenido img{
+    width:100%;
+    border-radius:10px;
+    margin:10px 0;
+}
+
+/* CERRAR */
 span{
     float:right;
     cursor:pointer;
